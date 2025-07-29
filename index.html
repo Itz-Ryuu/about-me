@@ -210,10 +210,8 @@
     star.style.animationDuration = (Math.random() * 3 + 1) + 's';
     stars.appendChild(star);
   }
-</script>
-
-<!-- Clock Script -->
-<script>
+  
+  
   function updateClock() {
     const now = new Date();
     const options = {
@@ -229,26 +227,21 @@
 
   setInterval(updateClock, 1000);
   updateClock();
-</script>
 
-<!-- Copy to Clipboard Script -->
-<script>
   function copyDiscord() {
     navigator.clipboard.writeText("itz.ryu.");
     alert("Copied Discord: itz.ryu.");
   }
-</script>
 
-<script>
+
+
   var typed = new Typed("#typed", {
     strings: ["Valorant player.", "Motorcycle rider.", "Music enthusiast."],
     typeSpeed: 50,
     backSpeed: 30,
     loop: true
   });
-</script>
 
-<!-- Contact Form with Discord webhook -->
 <section id="contact">
   <h2>Contact Me</h2>
   <form id="contact-form">
@@ -258,8 +251,7 @@
   </form>
 </section>
 
-<script>
-  const webhookUrl = "https://discord.com/api/webhooks/1399901955446542459/o0QAKwPqA4W-Srd9wdX6hx7oWLYJz7UYUiqDEbl2zTsGf-6kwlGH0w7T5_Nlc6zzKNYS";
+  const webhookUrl = "https://discord.com/api/webhooks/1399903663052292157/J72WMuhUM5InFL2HyS_jcju3rrnFVTIDd5gGP9XonMCPrbwUIhXuhUze0Zb8F6ra1hhL;
 
   document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
