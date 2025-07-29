@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -16,130 +15,230 @@
 <meta content="https://itz-ryuu.github.io/site/" property="og:url"/>
 <title>Ryu's Page</title>
 <link href="styles.css" rel="stylesheet"/>
-<link href="assets/favicon.ico" rel="icon">
-</link><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script></head>
+<link href="assets/favicon.ico" rel="icon"/>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("umWUlh9bbkgYDNt7L");
+  })();
+</script>
+<style>
+  /* ===== Your existing CSS here, plus: ===== */
+
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #0d0b1f, #1f1433);
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+
+  /* ... (all your existing styles from styles.css, omitted here for brevity) ... */
+
+  /* Contact form styling and positioning */
+  #contact {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(42, 15, 74, 0.85); /* black-purple transparent */
+    padding: 1.5rem;
+    border-radius: 15px;
+    max-width: 320px;
+    color: #fff;
+    font-size: 1rem;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  #contact h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: #e0c2ff;
+    text-align: left;
+  }
+
+  #contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  #contact input,
+  #contact textarea {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid #5a3eaa;
+    border-radius: 8px;
+    padding: 0.6rem 0.8rem;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Segoe UI', sans-serif;
+    resize: none;
+    transition: border-color 0.3s ease;
+  }
+
+  #contact input:focus,
+  #contact textarea:focus {
+    outline: none;
+    border-color: #c8a2ff;
+    background: rgba(10, 5, 25, 0.85);
+  }
+
+  #contact textarea {
+    min-height: 80px;
+  }
+
+  #contact button {
+    background: #5a3eaa;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  #contact button:hover {
+    background: #7d5be8;
+    color: #fff;
+    box-shadow: 0 0 10px #7d5be8;
+    transition: 0.3s;
+  }
+
+  /* Include your other CSS rules here as needed */
+</style>
+</head>
 <body>
 <div class="site-fade-in">
-<!-- Twinkling Stars Background -->
-<div class="stars" id="stars"></div>
-<!-- Clock in Top Right -->
-<div class="clock" id="clock">--:--:--</div>
-<!-- Profile Card -->
-<div class="container">
-<h1>Hi i'm Ryu <span id="typed"></span></h1>
-<img alt="Profile Picture" class="profile" src="assets/General_assets/profile.jpg"/>
-<div class="game-title">
-<img alt="Valorant Logo" src="assets/General_assets/valorant.png"/>
-        Valorant
+  <!-- Twinkling Stars Background -->
+  <div class="stars" id="stars"></div>
+  <!-- Clock in Top Right -->
+  <div class="clock" id="clock">--:--:--</div>
+  <!-- Profile Card -->
+  <div class="container">
+    <h1>Hi i'm Ryu <span id="typed"></span></h1>
+    <img alt="Profile Picture" class="profile" src="assets/General_assets/profile.jpg"/>
+    <div class="game-title">
+      <img alt="Valorant Logo" src="assets/General_assets/valorant.png"/>
+      Valorant
+    </div>
+    <div class="ranks">
+      <div class="rank">
+        <div class="rank-label">Current</div>
+        <img alt="Bronze Rank" src="assets/General_assets/bronze.png"/>
+        <div>Bronze 2</div>
       </div>
-<div class="ranks">
-<div class="rank">
-<div class="rank-label">Current</div>
-<img alt="Bronze Rank" src="assets/General_assets/bronze.png"/>
-<div>Bronze 2</div>
-</div>
-<div class="rank">
-<div class="rank-label">Peak</div>
-<img alt="Platinum 2 Rank" src="assets/General_assets/plat2.png"/>
-<div>Platinum 2</div>
-</div>
-</div>
-<div class="discord">
-<div class="copy-box" onclick="copyDiscord()">
-<img alt="Discord Icon" src="assets/General_assets/dis.png"/>
-          itz.ryu.
+      <div class="rank">
+        <div class="rank-label">Peak</div>
+        <img alt="Platinum 2 Rank" src="assets/General_assets/plat2.png"/>
+        <div>Platinum 2</div>
+      </div>
+    </div>
+    <div class="discord">
+      <div class="copy-box" onclick="copyDiscord()">
+        <img alt="Discord Icon" src="assets/General_assets/dis.png"/>
+        itz.ryu.
+      </div>
+      <a class="copy-box" href="https://steamcommunity.com/id/Ryuu-Kun" target="_blank">
+        <img alt="Steam Icon" src="https://cdn.simpleicons.org/steam/ffffff"/>
+        My Steam
+      </a>
+      <a class="copy-box" href="https://tracker.gg/valorant/profile/riot/deur%20stop%231403/overview?playlist=competitive" target="_blank">
+        <img alt="TRN Icon" src="https://pbs.twimg.com/profile_images/1311419233541160965/meBmTGVv_400x400.jpg"/>
+        My Valorant stats
+      </a>
+    </div>
+    <!-- Inner Darker Box With your specs -->
+    <div class="inner-box">
+      <strong>My PC Specs</strong>
+      <div> </div>
+      --------------
+      <div class="specs">
+        <div class="spec">
+          <img alt="CPU" src="assets/icons/cpu.png"/>
+          <div class="spec-label">Ryzen 5 5500</div>
         </div>
-<a class="copy-box" href="https://steamcommunity.com/id/Ryuu-Kun" target="_blank">
-<img alt="Steam Icon" src="https://cdn.simpleicons.org/steam/ffffff"/>
-          My Steam
-        </a>
-<a class="copy-box" href="https://tracker.gg/valorant/profile/riot/deur%20stop%231403/overview?playlist=competitive" target="_blank">
-<img alt="TRN Icon" src="https://pbs.twimg.com/profile_images/1311419233541160965/meBmTGVv_400x400.jpg"/>
-          My Valorant stats
-        </a>
+        <div class="spec">
+          <img alt="GPU" src="assets/icons/gpu.png"/>
+          <div class="spec-label">RTX 2060 Super</div>
+        </div>
+        <div class="spec">
+          <img alt="SSD" src="assets/icons/ssd.png"/>
+          <div class="spec-label">SNV3S 1TB</div>
+        </div>
+        <div class="spec">
+          <img alt="RAM" src="assets/icons/ram.png"/>
+          <div class="spec-label">Corsair Vengeance LPX 32GB</div>
+        </div>
+        <div class="spec">
+          <img alt="Motherboard" src="assets/icons/mobo.png"/>
+          <div class="spec-label">MSI A520M-A PRO</div>
+        </div>
+      </div>
+    </div>
+    <!-- About Me Box -->
+    <div class="inner-box">
+      <strong>About Me</strong>
+      <div> </div>
+      --------------
+      <div class="about-me">
+        <div class="about-row"><span class="label">Name:</span> Ryu</div>
+        <div class="about-row"><span class="label">Age:</span> 17</div>
+        <div class="about-row"><span class="label">From:</span> Czech Republic</div>
+        <div class="about-row"><span class="label">Languages:</span> Czech, English</div>
+        <div class="about-row"><span class="label">Hobbies:</span> Gaming, Coding, Music, Movies, Motorcycles</div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- Inner Darker Box With your specs -->
-<div class="inner-box">
-<strong>My PC Specs</strong>
-<div> </div>
-        --------------
-        <div class="specs">
-<div class="spec">
-<img alt="CPU" src="assets/icons/cpu.png"/>
-<div class="spec-label">Ryzen 5 5500</div>
-</div>
-<div class="spec">
-<img alt="GPU" src="assets/icons/gpu.png"/>
-<div class="spec-label">RTX 2060 Super</div>
-</div>
-<div class="spec">
-<img alt="SSD" src="assets/icons/ssd.png"/>
-<div class="spec-label">SNV3S 1TB</div>
-</div>
-<div class="spec">
-<img alt="RAM" src="assets/icons/ram.png"/>
-<div class="spec-label">Corsair Vengeance LPX 32GB</div>
-</div>
-<div class="spec">
-<img alt="Motherboard" src="assets/icons/mobo.png"/>
-<div class="spec-label">MSI A520M-A PRO</div>
-</div>
-</div>
-</div>
-<!-- About Me Box -->
-<div class="inner-box">
-<strong>About Me</strong>
-<div> </div>
-        --------------
-        <div class="about-me">
-<div class="about-row"><span class="label">Name:</span> Ryu</div>
-<div class="about-row"><span class="label">Age:</span> 17</div>
-<div class="about-row"><span class="label">From:</span> Czech Republic</div>
-<div class="about-row"><span class="label">Languages:</span> Czech, English</div>
-<div class="about-row"><span class="label">Hobbies:</span> Gaming, Coding, Music, Movies, Motorcycles</div>
-</div>
-</div>
-</div>
-</div>
+
 <!-- Star Generator Script -->
 <script>
-    const stars = document.getElementById('stars');
-    const totalStars = 400;
+  const stars = document.getElementById('stars');
+  const totalStars = 400;
 
-    for (let i = 0; i < totalStars; i++) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      star.style.top = Math.random() * 100 + 'vh';
-      star.style.left = Math.random() * 100 + 'vw';
-      star.style.animationDuration = (Math.random() * 3 + 1) + 's';
-      stars.appendChild(star);
-    }
-  </script>
+  for (let i = 0; i < totalStars; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.top = Math.random() * 100 + 'vh';
+    star.style.left = Math.random() * 100 + 'vw';
+    star.style.animationDuration = (Math.random() * 3 + 1) + 's';
+    stars.appendChild(star);
+  }
+</script>
+
 <!-- Clock Script -->
 <script>
-    function updateClock() {
-      const now = new Date();
-      const options = {
-        timeZone: 'Europe/Prague',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false
-      };
-      const formatter = new Intl.DateTimeFormat([], options);
-      document.getElementById("clock").textContent = formatter.format(now);
-    }
+  function updateClock() {
+    const now = new Date();
+    const options = {
+      timeZone: 'Europe/Prague',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: false
+    };
+    const formatter = new Intl.DateTimeFormat([], options);
+    document.getElementById("clock").textContent = formatter.format(now);
+  }
 
-    setInterval(updateClock, 1000);
-    updateClock();
-  </script>
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+
 <!-- Copy to Clipboard Script -->
 <script>
-    function copyDiscord() {
-      navigator.clipboard.writeText("itz.ryu.");
-      alert("Copied Discord: itz.ryu.");
-    }
-  </script>
+  function copyDiscord() {
+    navigator.clipboard.writeText("itz.ryu.");
+    alert("Copied Discord: itz.ryu.");
+  }
+</script>
+
 <script>
   var typed = new Typed("#typed", {
     strings: ["Valorant player.", "Motorcycle rider.", "Music enthusiast."],
@@ -160,7 +259,7 @@
 </section>
 
 <script>
-  const webhookURL = "https://discord.com/api/webhooks/1399896448111218768/b2gMHjEnLvCFdZhpp096LjTM-UaDabnBOjulOeKck_lHf13Kmr-ygzd9HHPZXu4ulXQk";
+  const webhookUrl = "https://discord.com/api/webhooks/1399896448111218768/b2gMHjEnLvCFdZhpp096LjTM-UaDabnBOjulOeKck_lHf13Kmr-ygzd9HHPZXu4ulXQk";
 
   document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -169,40 +268,9 @@
     const message = this.message.value.trim();
 
     if (!discordTag || !message) {
-      alert("Please fill out both fields.");
+      alert("Please fill in both fields.");
       return;
     }
 
     const payload = {
-      embeds: [{
-        title: "New message from website contact form",
-        color: 7506394,
-        fields: [
-          { name: "Discord Tag", value: discordTag, inline: true },
-          { name: "Message", value: message }
-        ],
-        timestamp: new Date()
-      }]
-    };
-
-    fetch(webhookURL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    })
-    .then(response => {
-      if (response.ok) {
-        alert("Message sent! I'll get back to you on Discord.");
-        this.reset();
-      } else {
-        alert("Failed to send message. Please try again later.");
-      }
-    })
-    .catch(error => {
-      alert("Error sending message: " + error.message);
-    });
-  });
-</script>
-
-</body>
-</html>
+      content: `**New message from website
