@@ -17,8 +17,7 @@
 <title>Ryu's Page</title>
 <link href="styles.css" rel="stylesheet"/>
 <link href="assets/favicon.ico" rel="icon">
-</link><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-</head>
+</link><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script></head>
 <body>
 <div class="site-fade-in">
 <!-- Twinkling Stars Background -->
@@ -149,5 +148,61 @@
     loop: true
   });
 </script>
+
+<!-- Contact Form with Discord webhook -->
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form id="contact-form">
+    <input name="discord_tag" placeholder="Your Discord Tag (e.g., User#1234)" required type="text"/>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<script>
+  const webhookURL = "https://discord.com/api/webhooks/1399896448111218768/b2gMHjEnLvCFdZhpp096LjTM-UaDabnBOjulOeKck_lHf13Kmr-ygzd9HHPZXu4ulXQk";
+
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const discordTag = this.discord_tag.value.trim();
+    const message = this.message.value.trim();
+
+    if (!discordTag || !message) {
+      alert("Please fill out both fields.");
+      return;
+    }
+
+    const payload = {
+      embeds: [{
+        title: "New message from website contact form",
+        color: 7506394,
+        fields: [
+          { name: "Discord Tag", value: discordTag, inline: true },
+          { name: "Message", value: message }
+        ],
+        timestamp: new Date()
+      }]
+    };
+
+    fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+    .then(response => {
+      if (response.ok) {
+        alert("Message sent! I'll get back to you on Discord.");
+        this.reset();
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    })
+    .catch(error => {
+      alert("Error sending message: " + error.message);
+    });
+  });
+</script>
+
 </body>
 </html>
