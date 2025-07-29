@@ -1,120 +1,112 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="title" content="Ryu's About Me" />
-  <meta name="description" content="Here you can find my discord, and Valorant statistics" />
-  <meta name="author" content="Ryu" />
-  <meta name="theme-color" content="#c8a2ff" />
-  <meta name="robots" content="index, follow" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="About me" />
-  <meta property="og:description" content="Here you can find my Discord, and valorant Statistics" />
-  <meta property="og:image" content="https://i.imgur.com/knqgrl7.png" />
-  <meta property="og:url" content="https://itz-ryuu.github.io/site/" />
-  <title>Ryu's Page</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="assets/favicon.ico" />
-</head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Ryu's About Me" name="title"/>
+<meta content="Here you can find my discord, and Valorant statistics" name="description"/>
+<meta content="Ryu" name="author"/>
+<meta content="#c8a2ff" name="theme-color"/>
+<meta content="index, follow" name="robots"/>
+<meta content="website" property="og:type"/>
+<meta content="About me" property="og:title"/>
+<meta content="Here you can find my Discord, and valorant Statistics" property="og:description"/>
+<meta content="https://i.imgur.com/knqgrl7.png" property="og:image"/>
+<meta content="https://itz-ryuu.github.io/site/" property="og:url"/>
+<title>Ryu's Page</title>
+<link href="styles.css" rel="stylesheet"/>
+<link href="assets/favicon.ico" rel="icon">
+</link><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script><script>
+  (function(){
+    emailjs.init("YOUR_PUBLIC_KEY");
+  })();
+</script></head>
 <body>
-
-  <div class="site-fade-in">
-
-    <!-- Twinkling Stars Background -->
-    <div class="stars" id="stars"></div>
-
-    <!-- Clock in Top Right -->
-    <div class="clock" id="clock">--:--:--</div>
-
-    <!-- Profile Card -->
-    <div class="container">
-      <h1>Ryu</h1>
-      <img src="assets/General_assets/profile.jpg" alt="Profile Picture" class="profile" />
-
-      <div class="game-title">
-        <img src="assets/General_assets/valorant.png" alt="Valorant Logo" />
+<div class="site-fade-in">
+<!-- Twinkling Stars Background -->
+<div class="stars" id="stars"></div>
+<!-- Clock in Top Right -->
+<div class="clock" id="clock">--:--:--</div>
+<!-- Profile Card -->
+<div class="container">
+<h1>Ryu I'm <span id="typed"></span></h1>
+<img alt="Profile Picture" class="profile" src="assets/General_assets/profile.jpg"/>
+<div class="game-title">
+<img alt="Valorant Logo" src="assets/General_assets/valorant.png"/>
         Valorant
       </div>
-
-      <div class="ranks">
-        <div class="rank">
-          <div class="rank-label">Current</div>
-          <img src="assets/General_assets/bronze.png" alt="Bronze Rank" />
-          <div>Bronze 2</div>
-        </div>
-        <div class="rank">
-          <div class="rank-label">Peak</div>
-          <img src="assets/General_assets/plat2.png" alt="Platinum 2 Rank" />
-          <div>Platinum 2</div>
-        </div>
-      </div>
-
-      <div class="discord">
-        <div class="copy-box" onclick="copyDiscord()">
-          <img src="assets/General_assets/dis.png" alt="Discord Icon" />
+<div class="ranks">
+<div class="rank">
+<div class="rank-label">Current</div>
+<img alt="Bronze Rank" src="assets/General_assets/bronze.png"/>
+<div>Bronze 2</div>
+</div>
+<div class="rank">
+<div class="rank-label">Peak</div>
+<img alt="Platinum 2 Rank" src="assets/General_assets/plat2.png"/>
+<div>Platinum 2</div>
+</div>
+</div>
+<div class="discord">
+<div class="copy-box" onclick="copyDiscord()">
+<img alt="Discord Icon" src="assets/General_assets/dis.png"/>
           itz.ryu.
         </div>
-
-        <a href="https://steamcommunity.com/id/Ryuu-Kun" target="_blank" class="copy-box">
-          <img src="https://cdn.simpleicons.org/steam/ffffff" alt="Steam Icon" />
+<a class="copy-box" href="https://steamcommunity.com/id/Ryuu-Kun" target="_blank">
+<img alt="Steam Icon" src="https://cdn.simpleicons.org/steam/ffffff"/>
           My Steam
         </a>
-        <a href="https://tracker.gg/valorant/profile/riot/deur%20stop%231403/overview?playlist=competitive" target="_blank" class="copy-box">
-          <img src="https://pbs.twimg.com/profile_images/1311419233541160965/meBmTGVv_400x400.jpg" alt="TRN Icon" />
+<a class="copy-box" href="https://tracker.gg/valorant/profile/riot/deur%20stop%231403/overview?playlist=competitive" target="_blank">
+<img alt="TRN Icon" src="https://pbs.twimg.com/profile_images/1311419233541160965/meBmTGVv_400x400.jpg"/>
           My Valorant stats
         </a>
-      </div>
-
-      <!-- Inner Darker Box With your specs -->
-      <div class="inner-box">
-        <strong>My PC Specs</strong>
-        <div> </div>
+</div>
+<!-- Inner Darker Box With your specs -->
+<div class="inner-box">
+<strong>My PC Specs</strong>
+<div> </div>
         --------------
         <div class="specs">
-          <div class="spec">
-            <img src="assets/icons/cpu.png" alt="CPU" />
-            <div class="spec-label">Ryzen 5 5500</div>
-          </div>
-          <div class="spec">
-            <img src="assets/icons/gpu.png" alt="GPU" />
-            <div class="spec-label">RTX 2060 Super</div>
-          </div>
-          <div class="spec">
-            <img src="assets/icons/ssd.png" alt="SSD" />
-            <div class="spec-label">SNV3S 1TB</div>
-          </div>
-          <div class="spec">
-            <img src="assets/icons/ram.png" alt="RAM" />
-            <div class="spec-label">Corsair Vengeance LPX 32GB</div>
-          </div>
-          <div class="spec">
-            <img src="assets/icons/mobo.png" alt="Motherboard" />
-            <div class="spec-label">MSI A520M-A PRO</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- About Me Box -->
-      <div class="inner-box">
-        <strong>About Me</strong>
-        <div> </div>
+<div class="spec">
+<img alt="CPU" src="assets/icons/cpu.png"/>
+<div class="spec-label">Ryzen 5 5500</div>
+</div>
+<div class="spec">
+<img alt="GPU" src="assets/icons/gpu.png"/>
+<div class="spec-label">RTX 2060 Super</div>
+</div>
+<div class="spec">
+<img alt="SSD" src="assets/icons/ssd.png"/>
+<div class="spec-label">SNV3S 1TB</div>
+</div>
+<div class="spec">
+<img alt="RAM" src="assets/icons/ram.png"/>
+<div class="spec-label">Corsair Vengeance LPX 32GB</div>
+</div>
+<div class="spec">
+<img alt="Motherboard" src="assets/icons/mobo.png"/>
+<div class="spec-label">MSI A520M-A PRO</div>
+</div>
+</div>
+</div>
+<!-- About Me Box -->
+<div class="inner-box">
+<strong>About Me</strong>
+<div> </div>
         --------------
         <div class="about-me">
-          <div class="about-row"><span class="label">Name:</span> Ryu</div>
-          <div class="about-row"><span class="label">Age:</span> 17</div>
-          <div class="about-row"><span class="label">From:</span> Czech Republic</div>
-          <div class="about-row"><span class="label">Languages:</span> Czech, English</div>
-          <div class="about-row"><span class="label">Hobbies:</span> Gaming, Coding, Music</div>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- Star Generator Script -->
-  <script>
+<div class="about-row"><span class="label">Name:</span> Ryu</div>
+<div class="about-row"><span class="label">Age:</span> 17</div>
+<div class="about-row"><span class="label">From:</span> Czech Republic</div>
+<div class="about-row"><span class="label">Languages:</span> Czech, English</div>
+<div class="about-row"><span class="label">Hobbies:</span> Gaming, Coding, Music</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Star Generator Script -->
+<script>
     const stars = document.getElementById('stars');
     const totalStars = 400;
 
@@ -127,9 +119,8 @@
       stars.appendChild(star);
     }
   </script>
-
-  <!-- Clock Script -->
-  <script>
+<!-- Clock Script -->
+<script>
     function updateClock() {
       const now = new Date();
       const options = {
@@ -146,14 +137,39 @@
     setInterval(updateClock, 1000);
     updateClock();
   </script>
-
-  <!-- Copy to Clipboard Script -->
-  <script>
+<!-- Copy to Clipboard Script -->
+<script>
     function copyDiscord() {
       navigator.clipboard.writeText("itz.ryu.");
       alert("Copied Discord: itz.ryu.");
     }
   </script>
-
-</body>
+<script>
+  var typed = new Typed("#typed", {
+    strings: ["a Web Developer.", "a Gamer.", "a Designer."],
+    typeSpeed: 50,
+    backSpeed: 30,
+    loop: true
+  });
+</script>
+<section id="contact">
+<h2>Contact Me</h2>
+<form id="contact-form">
+<input name="user_name" placeholder="Your Name" required="" type="text"/>
+<input name="user_email" placeholder="Your Email" required="" type="email"/>
+<textarea name="message" placeholder="Your Message" required=""></textarea>
+<button type="submit">Send</button>
+</form>
+</section>
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+      .then(function() {
+        alert("Message sent successfully!");
+      }, function(error) {
+        alert("Failed to send message: " + JSON.stringify(error));
+      });
+  });
+</script></body>
 </html>
