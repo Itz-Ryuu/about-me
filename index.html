@@ -17,11 +17,8 @@
 <title>Ryu's Page</title>
 <link href="styles.css" rel="stylesheet"/>
 <link href="assets/favicon.ico" rel="icon">
-</link><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script><script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script><script>
-  (function(){
-    emailjs.init("umWUlh9bbkgYDNt7L");
-  })();
-</script></head>
+</link><script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
 <body>
 <div class="site-fade-in">
 <!-- Twinkling Stars Background -->
@@ -152,24 +149,5 @@
     loop: true
   });
 </script>
-<section id="contact">
-<h2>Contact Me</h2>
-<form id="contact-form">
-<input name="user_name" placeholder="Your Name" required="" type="text"/>
-<input name="user_email" placeholder="Your Email" required="" type="email"/>
-<textarea name="message" placeholder="Your Message" required=""></textarea>
-<button type="submit">Send</button>
-</form>
-</section>
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    emailjs.sendForm('service_dog4a9a', 'template_a147u6q', this)
-      .then(function() {
-        alert("Message sent successfully!");
-      }, function(error) {
-        alert("Failed to send message: " + JSON.stringify(error));
-      });
-  });
-</script></body>
+</body>
 </html>
