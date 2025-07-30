@@ -254,7 +254,8 @@
   });
 </script>
   
-<script>  
+
+<script>
 <section id="contact">
   <h2>Contact Me</h2>
   <form id="contact-form">
@@ -263,8 +264,8 @@
     <button type="submit">Send</button>
   </form>
 </section>
-
-  const webhookUrl = "https://discord.com/api/webhooks/1399903663052292157/J72WMuhUM5InFL2HyS_jcju3rrnFVTIDd5gGP9XonMCPrbwUIhXuhUze0Zb8F6ra1hhL;
+  
+  const webhookUrl = "https://discord.com/api/webhooks/1399903663052292157/J72WMuhUM5InFL2HyS_jcju3rrnFVTIDd5gGP9XonMCPrbwUIhXuhUze0Zb8F6ra1hhL";
 
   document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -277,10 +278,27 @@
       return;
     }
 
-  const payload = {
-  content: `**New message from website contact form:**\n**Discord Tag:** ${discordTag}\n**Message:**\n${message}`
-};
+    const payload = {
+      content: `**New message from website contact form:**\n**Discord Tag:** ${discordTag}\n**Message:**\n${message}`
+    };
 
+    fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+    .then(res => {
+      if (res.ok) {
+        alert("Message sent successfully!");
+        this.reset();
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    })
+    .catch(() => {
+      alert("Failed to send message. Please check your connection and try again.");
+    });
+  });
 </script>
-</body>
-</html>
+  </body>
+  </html>
