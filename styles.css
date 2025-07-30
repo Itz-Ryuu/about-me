@@ -1,11 +1,13 @@
+/* General Body Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to bottom right, #0d0b1f, #1f1433);
   color: #ffffff;
-  overflow-x: hidden; /* optional, prevents horizontal scroll only */
+  overflow-x: hidden;
 }
 
+/* Star Background */
 .stars {
   position: fixed;
   top: 0;
@@ -16,7 +18,6 @@ body {
   background: transparent;
   pointer-events: none;
 }
-
 .star {
   position: absolute;
   width: 2px;
@@ -25,12 +26,12 @@ body {
   opacity: 0.8;
   animation: twinkle 2s infinite ease-in-out;
 }
-
 @keyframes twinkle {
   0%, 100% { opacity: 0.2; }
   50% { opacity: 1; }
 }
 
+/* Main Container */
 .container {
   max-width: 700px;
   margin: 5vh auto;
@@ -42,19 +43,20 @@ body {
   backdrop-filter: blur(12px);
 }
 
+/* Heading */
 h1 {
   font-size: 3rem;
   color: #e0c2ff;
   margin-bottom: 1rem;
   animation: glow 2s infinite ease-in-out;
 }
-
 @keyframes glow {
   0% { text-shadow: 0 0 5px #c8a2ff; }
   50% { text-shadow: 0 0 20px #e0c2ff, 0 0 30px #c8a2ff; }
   100% { text-shadow: 0 0 5px #c8a2ff; }
 }
 
+/* Profile Image */
 img.profile {
   width: 130px;
   height: 130px;
@@ -64,6 +66,7 @@ img.profile {
   margin-bottom: 1.5rem;
 }
 
+/* Game Title */
 .game-title {
   font-size: 1.5rem;
   margin-top: 1.2rem;
@@ -72,12 +75,12 @@ img.profile {
   align-items: center;
   gap: 10px;
 }
-
 .game-title img {
   width: 30px;
   height: 30px;
 }
 
+/* Ranks */
 .ranks {
   display: flex;
   justify-content: center;
@@ -85,20 +88,16 @@ img.profile {
   gap: 40px;
   margin-top: 1rem;
 }
-
 .rank {
   text-align: center;
   font-size: 0.95rem;
   width: 100px;
 }
-
 .rank-label {
   font-size: 0.85rem;
   color: #ccc;
   margin-bottom: 5px;
 }
-
-/* Uniform image size regardless of file dimensions */
 .rank img {
   height: 60px;
   width: auto;
@@ -106,17 +105,14 @@ img.profile {
   display: block;
   margin: 0 auto;
 }
-
-/* Optional: add specific classes for color adjustments or future tweaks */
 .rank-bronze img {
   filter: drop-shadow(0 0 4px #cd7f32);
 }
-
 .rank-plat img {
   filter: drop-shadow(0 0 4px #a0a0ff);
 }
 
-
+/* Discord Link Box */
 .discord {
   margin-top: 2rem;
   display: flex;
@@ -124,12 +120,10 @@ img.profile {
   justify-content: center;
   gap: 10px;
 }
-
 .discord img {
   width: 24px;
   height: 24px;
 }
-
 .copy-box {
   display: flex;
   align-items: center;
@@ -140,16 +134,20 @@ img.profile {
   cursor: pointer;
   color: #c8a2ff;
   font-family: monospace;
-  transition: background;
-  margin-right: 2px;
+  transition: background 0.3s ease;
   text-decoration: none;
 }
-
-
 .copy-box:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+.copy-box img {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
 
+/* Clock */
 .clock {
   position: fixed;
   top: 15px;
@@ -162,6 +160,7 @@ img.profile {
   font-family: monospace;
 }
 
+/* Inner Info Box */
 .inner-box {
   margin-top: 2rem;
   padding: 1rem;
@@ -170,11 +169,11 @@ img.profile {
   color: #fff;
   font-size: 1rem;
   line-height: 1.5;
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4); /* makes it look sunk-in */
-  border: 1px solid rgba(255, 255, 255, 0.05);   /* subtle border to define shape */
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-
+/* Specs Grid */
 .specs {
   display: flex;
   flex-wrap: wrap;
@@ -182,18 +181,8 @@ img.profile {
   gap: 25px;
   margin-top: 2.5rem;
 }
-
 .spec {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #e0c2ff;
-  font-size: 0.95rem;
-  transition: transform 0.2s ease;
-}
-
-.spec {
-  width: 110px; /* Keeps items uniform */
+  width: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -202,37 +191,15 @@ img.profile {
   font-size: 0.9rem;
   transition: transform 0.2s ease;
 }
-
+.spec:hover {
+  transform: scale(1.1);
+}
 .spec img {
   width: 32px;
   height: 32px;
   margin-bottom: 6px;
   filter: drop-shadow(0 0 8px #a57aff) drop-shadow(0 0 4px #c8a2ff);
 }
-
-
-.spec:hover {
-  transform: scale(1.1);
-}
-
-a.copy-box {
-  text-decoration: none;
-}
-
-.copy-box {
-  display: flex;
-  align-items: center;
-  height: 40px; /* Force same height for all buttons */
-  padding: 0 15px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  cursor: pointer;
-  color: #c8a2ff;
-  font-family: monospace;
-  transition: background 0.3s ease;
-  text-decoration: none; /* Just in case */
-}
-
 .spec-label {
   margin-top: 4px;
   text-align: center;
@@ -243,14 +210,7 @@ a.copy-box {
   word-wrap: break-word;
 }
 
-.copy-box img {
-  width: 20px;
-  height: 20px;
-  margin-right: 12px;  /* spacing between icon and text */
-  flex-shrink: 0;      /* keep icon size fixed */
-  filter: none;        /* prevent color changes */
-}
-
+/* About Me */
 .about-me {
   margin-top: 1.5rem;
   text-align: left;
@@ -261,136 +221,76 @@ a.copy-box {
   line-height: 1.4;
   padding: 0 10px;
 }
-
 .about-row {
   display: flex;
   gap: 10px;
   color: #e0c2ff;
 }
-
 .about-row .label {
   font-weight: bold;
   min-width: 100px;
   color: #ffffff;
 }
+
+/* Fade-in effect for entire site */
 .site-fade-in {
   opacity: 0;
   animation: fadeWholeSiteIn 2.5s ease-out forwards;
 }
-
 @keyframes fadeWholeSiteIn {
-  to {
-    opacity: 1;
-  }
-  #contact {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(42, 15, 74, 0.85); /* black-purple transparent like .inner-box */
-  padding: 1.5rem;
-  border-radius: 15px;
-  max-width: 320px;
-  color: #fff;
-  font-size: 1rem;
-  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  z-index: 1000;
-  font-family: 'Segoe UI', sans-serif;
+  to { opacity: 1; }
 }
 
-#contact h2 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  color: #e0c2ff;
-  text-align: left;
-}
-
-#contact form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-#contact input,
-#contact textarea {
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid #5a3eaa; /* purple border */
-  border-radius: 8px;
-  padding: 0.6rem 0.8rem;
-  color: white;
-  font-size: 1rem;
-  font-family: 'Segoe UI', sans-serif;
-  resize: none;
-  transition: border-color 0.3s ease;
-}
-
-#contact input:focus,
-#contact textarea:focus {
-  outline: none;
-  border-color: #c8a2ff;
-  background: rgba(10, 5, 25, 0.85);
-}
-
-#contact textarea {
-  min-height: 80px;
-}
-
-#contact button {
-  background: #5a3eaa;
-  border: none;
-  border-radius: 8px;
-  padding: 0.7rem;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-#contact button:hover {
-  background: #7d5be8;
-  color: #fff;
-  box-shadow: 0 0 10px #7d5be8;
-  transition: 0.3s;
- }
-}
+/* 💬 CONTACT FORM STYLES - bottom left */
 #contact {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: rgba(42, 15, 74, 0.85); /* dark purple transparent */
+  background: rgba(42, 15, 74, 0.85);
   color: white;
   padding: 20px;
   border-radius: 15px;
   width: 320px;
   box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
   font-family: 'Segoe UI', sans-serif;
+  z-index: 1000;
 }
 #contact h2 {
   margin-top: 0;
   margin-bottom: 15px;
   font-weight: 700;
+  color: #e0c2ff;
+  text-align: left;
 }
-#contact-form input,
-#contact-form textarea {
-  width: 100%;
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+#contact input,
+#contact textarea {
+  width: 95%;
   background: rgba(0, 0, 0, 0.3);
   border: none;
   border-radius: 8px;
   padding: 10px;
-  margin-bottom: 12px;
+  margin-bottom: 5px;
   color: white;
   font-size: 1rem;
   font-family: monospace;
   outline: none;
   resize: vertical;
 }
-#contact-form input::placeholder,
-#contact-form textarea::placeholder {
+#contact input:focus,
+#contact textarea:focus {
+  background: rgba(10, 5, 25, 0.85);
+  border: 1px solid #c8a2ff;
+}
+#contact input::placeholder,
+#contact textarea::placeholder {
   color: #ccc;
 }
-#contact-form button {
+#contact button {
   background: #6a4fcf;
   border: none;
   color: white;
@@ -401,6 +301,7 @@ a.copy-box {
   font-size: 1rem;
   transition: background 0.3s ease;
 }
-#contact-form button:hover {
+#contact button:hover {
   background: #7e63ff;
+  box-shadow: 0 0 10px #7e63ff;
 }
